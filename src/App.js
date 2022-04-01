@@ -1,27 +1,34 @@
-import { Routes, Route } from "react-router-dom";
+import { Routes, Route, Navigate } from "react-router-dom";
 import { AuthProvider, RequireAuth } from "./context/auth-context";
+import { ChangeContextProvider } from "./context/petweetChange-context";
 import Login from "./routes/Login";
-import Layout from "./components/Layout";
-import PublicPage from "./routes/PublicPage";
-import ProtectedPage from "./routes/ProtectedPage";
+import Register from "./routes/Register";
+import Navbar from "./components/Navbar";
+import Home from "./routes/Home";
+import Profile from "./routes/Profile";
 
 function App() {
   return (
     <AuthProvider>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<PublicPage />} />
+      <ChangeContextProvider>
+        <Routes>
           <Route path="/login" element={<Login />} />
+          <Route path="/register" element={<Register />} />
           <Route
-            path="/protected"
+            path="/"
             element={
               <RequireAuth>
-                <ProtectedPage />
+                <Navbar />
               </RequireAuth>
             }
-          />
-        </Route>
-      </Routes>
+          >
+            {" "}
+            <Route index element={<Navigate to={"/home"} />} />
+            <Route path="/home" element={<Home />} />{" "}
+            <Route path="/profile/:username" element={<Profile />} />
+          </Route>
+        </Routes>
+      </ChangeContextProvider>
     </AuthProvider>
   );
 }

@@ -1,11 +1,13 @@
 import { createContext, useState, useContext } from "react";
 import { useLocation, Navigate } from "react-router-dom";
+import { useToast } from "@chakra-ui/react";
 
 import { setInStorage, login } from "../services/auth";
 
 const AuthContext = createContext(null);
 
 export function AuthProvider({ children }) {
+  const toast = useToast();
   const userStored = localStorage.getItem("user");
   const [user, setUser] = useState(userStored ? JSON.parse(userStored) : null);
 
@@ -20,8 +22,13 @@ export function AuthProvider({ children }) {
       setInStorage("user", user);
       setUser(user);
     } catch (error) {
-      console.log(error);
-      alert("Email ou senha inválidos");
+      toast({
+        title: "Login negado.",
+        description: "Senha ou email incorreto",
+        status: "error",
+        duration: 5000,
+        isClosable: true,
+      });
     }
   };
 

@@ -1,41 +1,31 @@
-# projeto_final_petwitter
+# Petwitter
+A aplicação consite em twitter para pets, onde é possivel logar, cadastrar, twittar e acessar pefil do usuario.
 
-## Boilerplate de front-end (SPA) da Otterwise
+https://petwitter.vercel.app/
 
-Esse boilerplate deve ser utilizado para realizar o desafio final do curso WEB Developer da Otterwise, mas também pode ser usado para criar qualquer aplicação SPA, pois é baseado no Create React APP.
+## Pré-requisitos
+Tenha instalado em sua máquina as seguintes ferramentas:
+[Git](https://git-scm.com), [Node.js](https://nodejs.org/en/) e [Yarn](https://yarnpkg.com/).
 
-O boilerplate também conta uma integração de autenticação com o boilerplate de back-end da Otterwise via REST api pré setada.
+## Rodando a aplicação
+Para iniciar o projeto, siga o passo a passo abaixo.
+1. Baixe o [projeto do Back-End](https://github.com/LukaVieira1/FinalProject-Petwitter-BackEnd) em sua máquina e crie um repositório no Github baseado nele.
+2. Execute os seguintes passos
+```bash
+# Instalar as dependências
+$ yarn
+# Executar o server
+$ yarn dev
+```
+3. Agora na pasta do propio projeto, faça o clone no seu computador também e execute os seguintes passos
+```bash
+# Instalar as dependências
+$ yarn
+```
 
-## Tecnologias
-
-Create react app
-
-Styled components
-
-React Router
-
-Axios
-
-Rodando a aplicação
-
-## Instale as dependências através do comando yarn ou npm install.
-
-Crie um novo arquivo chamado .env.local e copie o conteúdo do arquivo .env-example modificando a url da API para a url do seu backend.
-
-Rode a aplicação utilizando yarn start ou npm start.
-
-Gerando o build da aplicação para ambiente de produção
-
-Para gerar a aplicação que ficará hospedada no ambiente de produção rode yarn build ou npm run build.
-
-Estrutura de pastas
-
-components: componentes gerais da aplicação.
-
-context: configuração de estados globais da aplicação utilizando a Context API.
-
-providers: configuração de clientes http e outros provedores externos a aplicação.
-
-services: pasta com arquivos que exportam funcões externas a aplicação como requisições.
-
-routes: contém as rotas da aplicação.
+4. Crie na raiz da pasta "FinalProject-Petwitter-FrontEnd" um .env-local e adicione uma variável de ambiente "REACT_APP_API_URL" que irá conter o link para a api. Nesse projeto utiliza-se "REACT_APP_API_URL=http://localhost:3000"
+5. Execute o projeto em uma porta diferente da 3000, pois ela já vai estar em uso (caso você esteja executando o vscode, na hora de executar, ele vai perguntar se você quer rodar o projeto em outra porta)
+```bash
+# Executando o projeto
+$ yarn start
+```
