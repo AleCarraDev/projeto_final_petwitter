@@ -12,7 +12,7 @@ instance.interceptors.request.use((config) => {
     ...config,
     headers: {
       ...config.headers,
-      Authorization: user?.accessToken ? `Bearer ${user?.accessToken}` : "",
+      Authorization: user?.accessToken ? `Bearer ${user?.accessToken}` : " ",
     },
   };
 });
