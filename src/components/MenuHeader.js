@@ -61,7 +61,7 @@ const MenuHeader = () => {
                 width={"56px"}
                 height={"56px"}
                 borderRadius={"50%"}
-                src="https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg"
+                src="https://www.nicepng.com/png/detail/125-1252346_dog-icon.png"
                 alt="user"
               />
             </DrawerHeader>
