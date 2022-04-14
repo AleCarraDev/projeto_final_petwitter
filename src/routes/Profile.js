@@ -66,16 +66,10 @@ const Profile = () => {
         borderBottom={"1px solid rgba(0, 0, 0, 0.1)"}
         borderRight={"1px solid #EEEEEE"}
         borderLeft={"1px solid #EEEEEE"}
-        direction={"column"}
+        direction={"row"}
       >
         <Image
-          zIndex={0}
-          height={["100px", "221px"]}
-          src="/images/profileBG.png"
-          alt={"BG"}
-        />
-        <Image
-          top={["122px", "-40px"]}
+          top={["122px", "10px"]}
           left={["17px", "30px"]}
           position={["absolute", "relative"]}
           zIndex={1}
@@ -84,41 +78,35 @@ const Profile = () => {
           borderRadius={"50%"}
           border={["4px solid #FFFFFF", "5px solid #FFFFFF"]}
           src={
-            "https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg"
+            "https://folhago.com.br/blogs/my-pet/wp-content/uploads/2022/01/todo-gato-branco-e-surdo-1.jpg"
           }
           alt={"avatar"}
         />
-        <Flex mt={["63px", "0"]} ml={"16px"} direction={"column"}>
+        <Flex
+          mt={["63px", "0"]}
+          ml={"50px"}
+          direction={"column"}
+          alignItems={"center"}
+          justifyContent={"center"}
+        >
           <Text color={"#141619"} fontWeight={"700"} fontSize={"22px"}>
             {user?.name}
           </Text>
           <Text lineHeight={["22px"]} color={["#687684"]}>
             @{user?.username}
           </Text>
-          <Text mt={"12px"} color={"#424242"}>
-            {" "}
-            Bio do perfil
-          </Text>
-          <Flex mt={"12px"}>
-            <CalendarIcon color={"#687684"} />
-            <Text fontWeight={"400"} color={"gray.800"} ml={"4px"}>
-              Entrou{" "}
-              <TimeAgo date={new Date(user?.createdAt)} formatter={formatter} />
-            </Text>
-          </Flex>
-          <Text
-            ml={["9px", "0"]}
-            width={"70px"}
-            borderBottom={"4px solid #00ACC1"}
-            fontWeight={"600"}
-            color={"gray.800"}
-            mt={["18px", "51px"]}
-          >
-            Petposts
-          </Text>
         </Flex>
       </Flex>
-
+      <Text
+        ml={["20px"]}
+        width={"70px"}
+        borderBottom={"4px solid #00ACC1"}
+        fontWeight={"600"}
+        color={"gray.800"}
+        mt={["18px", "51px"]}
+      >
+        Petposts
+      </Text>
       <Flex direction={"column"} overflow="hidden">
         <InfiniteScroll
           dataLength={petweets.length}
@@ -136,7 +124,7 @@ const Profile = () => {
               postTime={petweet.createdAt}
               username={petweet.user.username}
               photo={
-                "https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg"
+                "https://folhago.com.br/blogs/my-pet/wp-content/uploads/2022/01/todo-gato-branco-e-surdo-1.jpg"
               }
             />
           ))}

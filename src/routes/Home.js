@@ -72,7 +72,7 @@ const Home = () => {
           height={"48px"}
           borderRadius={"50%"}
           src={
-            "https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg"
+            "https://folhago.com.br/blogs/my-pet/wp-content/uploads/2022/01/todo-gato-branco-e-surdo-1.jpg"
           }
           alt={"avatar"}
         />
@@ -121,7 +121,7 @@ const Home = () => {
             postTime={user.createdAt}
             username={user.user.username}
             photo={
-              "https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg"
+              "https://folhago.com.br/blogs/my-pet/wp-content/uploads/2022/01/todo-gato-branco-e-surdo-1.jpg"
             }
           />
         ))}
