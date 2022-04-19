@@ -190,7 +190,7 @@ const HomeHeader = ({ btnMobile, logo }) => {
                 width={"56px"}
                 height={"56px"}
                 borderRadius={"50%"}
-                src="https://www.pcguia.pt/wp-content/uploads/2022/03/Gato-Preto.png"
+                src="https://i.pinimg.com/originals/88/6e/2d/886e2dca3712a22ff1398987ed1bf9d1.jpg"
                 alt="user"
               />
             </DrawerHeader>

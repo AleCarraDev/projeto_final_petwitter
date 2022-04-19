@@ -84,11 +84,11 @@ const Home = () => {
         >
           <Flex display={["none", "flex"]} p={"34px 0 0 34px"}>
             <Image
-              width={"100px"}
-              height={"100px"}
+              width={"130px"}
+              height={"130px"}
               borderRadius={"50%"}
               src={
-                "https://www.pcguia.pt/wp-content/uploads/2022/03/Gato-Preto.png"
+                "https://i.pinimg.com/originals/88/6e/2d/886e2dca3712a22ff1398987ed1bf9d1.jpg"
               }
               alt={"avatar"}
             />

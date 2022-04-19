@@ -1,5 +1,5 @@
-import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons";
-import { Link as RRLink, useNavigate } from "react-router-dom";
+import { ViewIcon, ViewOffIcon } from "@chakra-ui/icons"
+import { Link as RRLink, useNavigate } from "react-router-dom"
 import {
   Box,
   Button,
@@ -17,8 +17,8 @@ import {
   Text,
   Wrap,
   useToast,
-} from "@chakra-ui/react";
-import React from "react";
+} from "@chakra-ui/react"
+import React from "react"
 import {
   logo,
   bgLogin,
@@ -26,18 +26,18 @@ import {
   symbol,
   logoWhite,
   bgDesktop,
-} from "../../assets/images";
-import * as yup from "yup";
-import { useForm } from "react-hook-form";
-import { yupResolver } from "@hookform/resolvers/yup";
-import { signup } from "../../services/auth";
+} from "../../assets/images"
+import * as yup from "yup"
+import { useForm } from "react-hook-form"
+import { yupResolver } from "@hookform/resolvers/yup"
+import { signup } from "../../services/auth"
 
 const Signup = () => {
-  const [offView, setOffView] = React.useState(false);
-  const [type, setType] = React.useState("password");
+  const [offView, setOffView] = React.useState(false)
+  const [type, setType] = React.useState("password")
 
-  const navigate = useNavigate();
-  const toast = useToast();
+  const navigate = useNavigate()
+  const toast = useToast()
   let schema = yup.object().shape({
     name: yup
       .string("Campo precisa ser um texto")
@@ -59,25 +59,25 @@ const Signup = () => {
     username: yup
       .string("Campo precisa ser um texto")
       .required("Campo obrigatório"),
-  });
+  })
 
   const {
     register,
     handleSubmit,
     formState: { errors, isSubmitting },
-  } = useForm({ resolver: yupResolver(schema) });
+  } = useForm({ resolver: yupResolver(schema) })
 
   const onSubmit = async (data) => {
     try {
-      await signup(data);
-      navigate("/login");
+      await signup(data)
+      navigate("/login")
       toast({
         title: "Sucesso",
         description: "Cadastro realizado com sucesso",
         status: "success",
         duration: 5000,
         isClosable: true,
-      });
+      })
     } catch (error) {
       if (error.response.status === 400) {
         toast({
@@ -86,19 +86,19 @@ const Signup = () => {
           status: "error",
           duration: 5000,
           isClosable: true,
-        });
+        })
       }
     }
-  };
+  }
 
   const handleClick = () => {
-    setOffView(!offView);
+    setOffView(!offView)
     if (type === "password") {
-      setType("text");
+      setType("text")
     } else {
-      setType("password");
+      setType("password")
     }
-  };
+  }
   return (
     <>
       <Flex
@@ -263,7 +263,7 @@ const Signup = () => {
                 to="/login"
                 textDecoration="underline"
               >
-                Faça o login
+                Faça login
               </Link>
             </Wrap>
 
@@ -274,7 +274,7 @@ const Signup = () => {
         </Container>
       </Flex>
     </>
-  );
-};
+  )
+}
 
-export default Signup;
+export default Signup

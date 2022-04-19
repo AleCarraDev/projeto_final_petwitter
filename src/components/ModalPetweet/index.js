@@ -1,5 +1,5 @@
-import { postPetweet } from "../../services/petweets";
-import { useState } from "react";
+import { postPetweet } from "../../services/petweets"
+import { useState } from "react"
 import {
   Button,
   Flex,
@@ -14,36 +14,36 @@ import {
   useDisclosure,
   FormControl,
   Text,
-} from "@chakra-ui/react";
-import { useChange } from "../../context/petweetChange-context";
-import { postMobile } from "../../assets/images";
+} from "@chakra-ui/react"
+import { useChange } from "../../context/petweetChange-context"
+import { postMobile } from "../../assets/images"
 const ModalPetweet = () => {
-  const { isOpen, onOpen, onClose } = useDisclosure();
-  const { petweetsChange, setPetweetsChange } = useChange(false);
-  const [textLenght, setTextLenght] = useState(0);
-  const [isLoading, setIsLoading] = useState(false);
+  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { petweetsChange, setPetweetsChange } = useChange(false)
+  const [textLenght, setTextLenght] = useState(0)
+  const [isLoading, setIsLoading] = useState(false)
 
   const handleChange = (event) => {
-    let inputValue = event.target.value.trim();
-    setTextLenght(inputValue.length);
-  };
+    let inputValue = event.target.value.trim()
+    setTextLenght(inputValue.length)
+  }
   const handleClose = () => {
-    onClose();
-    setTextLenght(0);
-  };
+    onClose()
+    setTextLenght(0)
+  }
   async function handleSubmit(event) {
-    event.preventDefault();
-    setIsLoading(true);
-    const formData = new FormData(event.target);
-    const content = formData.get("content");
+    event.preventDefault()
+    setIsLoading(true)
+    const formData = new FormData(event.target)
+    const content = formData.get("content")
 
     try {
-      await postPetweet({ content });
+      await postPetweet({ content })
     } catch (error) {}
-    setPetweetsChange(!petweetsChange);
-    onClose();
-    setIsLoading(false);
-    event.target.reset();
+    setPetweetsChange(!petweetsChange)
+    onClose()
+    setIsLoading(false)
+    event.target.reset()
   }
 
   return (
@@ -92,7 +92,7 @@ const ModalPetweet = () => {
                   height={"37px"}
                   borderRadius={"50%"}
                   src={
-                    "https://www.pcguia.pt/wp-content/uploads/2022/03/Gato-Preto.png"
+                    "https://img.favpng.com/25/7/23/computer-icons-user-profile-avatar-image-png-favpng-LFqDyLRhe3PBXM0sx2LufsGFU.jpg"
                   }
                   alt={""}
                 />
@@ -136,7 +136,7 @@ const ModalPetweet = () => {
         </ModalContent>
       </Modal>
     </>
-  );
-};
+  )
+}
 
-export default ModalPetweet;
+export default ModalPetweet
