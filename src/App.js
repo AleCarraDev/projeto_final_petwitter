@@ -1,10 +1,10 @@
-import { Routes, Route } from "react-router-dom"
-import { AuthProvider, RequireAuth } from "./context/auth-context"
-import Home from "./routes/Home"
-import Login from "./routes/Login"
-import Profile from "./routes/Profile"
-import Signup from "./routes/Signup"
-import { ChangeContextProvider } from "./context/petweetChange-context"
+import { Routes, Route } from "react-router-dom";
+import { AuthProvider, RequireAuth } from "./context/auth-context";
+import Home from "./routes/Home";
+import Login from "./routes/Login";
+import Profile from "./routes/Profile";
+import Signup from "./routes/Signup";
+import { ChangeContextProvider } from "./context/petweetChange-context";
 
 function App() {
   return (
@@ -15,7 +15,7 @@ function App() {
             <Route path="/login" element={<Login />} />
             <Route path="/signup" element={<Signup />} />
             <Route
-              path="/"
+              path="/home"
               element={
                 <RequireAuth>
                   <Home />
@@ -35,7 +35,7 @@ function App() {
         </Routes>
       </ChangeContextProvider>
     </AuthProvider>
-  )
+  );
 }
 
-export default App
+export default App;
