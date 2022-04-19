@@ -1,6 +1,6 @@
-import { petImg } from "../assets/images"
+import { gatodeadpol } from "../assets/images";
 export const data = [
   {
-    image: petImg,
+    image: gatodeadpol,
   },
-]
+];

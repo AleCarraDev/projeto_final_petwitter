@@ -1,6 +1,6 @@
 import { Box, CircularProgress, Flex, Image, Text } from "@chakra-ui/react";
 import React from "react";
-import { btnMobile, logo, petImg } from "../../assets/images";
+import { btnMobile, gatodeadpol, logo, petImg } from "../../assets/images";
 import HomeHeader from "../../components/HomeHeader";
 import { getUserByParams } from "../../services/users";
 import Cardtweet from "../../components/CardTweet";
@@ -73,7 +73,7 @@ const Profile = () => {
         >
           <Flex mt={["0", "20px"]} p={["16px"]} gap={["16px"]}>
             <Box w={["73px", "90px", "120px"]}>
-              <Image w={["100%"]} src={petImg} />
+              <Image w={["100%"]} borderRadius={"50%"} src={gatodeadpol} />
             </Box>
             <Flex p={["16px"]} gap={["4px"]} flexDirection={"column"}>
               <Text

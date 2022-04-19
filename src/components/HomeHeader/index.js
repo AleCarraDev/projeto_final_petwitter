@@ -90,7 +90,7 @@ const HomeHeader = ({ btnMobile, logo }) => {
                 />
               </svg>
             }
-            to={"/home"}
+            to={"/"}
           >
             Home
           </DrawerLink>

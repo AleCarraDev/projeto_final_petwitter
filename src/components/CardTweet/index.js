@@ -1,10 +1,10 @@
-import { Box, Flex, Image, Text } from "@chakra-ui/react"
-import * as React from "react"
-import { Link } from "react-router-dom"
-import TimeAgo from "react-timeago"
-import buildFormatter from "react-timeago/lib/formatters/buildFormatter"
-import ptBrStrings from "react-timeago/lib/language-strings/pt-br"
-import { data } from "../../utils/data"
+import { Box, Flex, Image, Text } from "@chakra-ui/react";
+import * as React from "react";
+import { Link } from "react-router-dom";
+import TimeAgo from "react-timeago";
+import buildFormatter from "react-timeago/lib/formatters/buildFormatter";
+import ptBrStrings from "react-timeago/lib/language-strings/pt-br";
+import { data } from "../../utils/data";
 const Cardtweet = ({
   petImg,
   name,
@@ -13,7 +13,7 @@ const Cardtweet = ({
   content,
   onClick,
 }) => {
-  const formatter = buildFormatter(ptBrStrings)
+  const formatter = buildFormatter(ptBrStrings);
 
   return (
     <>
@@ -30,6 +30,7 @@ const Cardtweet = ({
             <Image
               maxW={["48px", "40px"]}
               h={["48px", "40px"]}
+              borderRadius={"50%"}
               src={data[0].image}
             ></Image>
           </Box>
@@ -90,7 +91,7 @@ const Cardtweet = ({
         </Flex>
       </Box>
     </>
-  )
-}
+  );
+};
 
-export default Cardtweet
+export default Cardtweet;
