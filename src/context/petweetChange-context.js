@@ -1,13 +1,13 @@
-import { createContext, useState, useContext } from "react";
+import { createContext, useState, useContext } from "react"
 
-const ChangeContext = createContext(null);
+const ChangeContext = createContext(null)
 
 export function ChangeContextProvider({ children }) {
-  const [petweetsChange, setPetweetsChange] = useState(false);
+  const [petweetsChange, setPetweetsChange] = useState(false)
 
   const changePetweetState = () => {
-    setPetweetsChange(!petweetsChange);
-  };
+    setPetweetsChange(!petweetsChange)
+  }
 
   return (
     <ChangeContext.Provider
@@ -15,9 +15,9 @@ export function ChangeContextProvider({ children }) {
     >
       {children}
     </ChangeContext.Provider>
-  );
+  )
 }
 
 export function useChange() {
-  return useContext(ChangeContext);
+  return useContext(ChangeContext)
 }

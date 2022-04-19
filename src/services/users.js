@@ -1,4 +1,4 @@
-import client from "../providers/client";
+import client from "../providers/client"
 
 export const getUserByParams = (username) =>
-  client.get(`/users?username=${username}`);
+  client.get(`/users?username=${username}`)
